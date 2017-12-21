@@ -1,0 +1,910 @@
+|comparator8
+A[0] => comparator1:G8.A
+A[1] => comparator1:G7.A
+A[2] => comparator1:G6.A
+A[3] => comparator1:G5.A
+A[4] => comparator1:G4.A
+A[5] => comparator1:G3.A
+A[6] => comparator1:G2.A
+A[7] => comparator1:G1.A
+B[0] => comparator1:G8.B
+B[1] => comparator1:G7.B
+B[2] => comparator1:G6.B
+B[3] => comparator1:G5.B
+B[4] => comparator1:G4.B
+B[5] => comparator1:G3.B
+B[6] => comparator1:G2.B
+B[7] => comparator1:G1.B
+Cout <= comparator1:G8.Cout
+Dout <= comparator1:G8.Dout
+equal <= comparator1:G8.equal
+
+
+|comparator8|comparator1:G1
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G1|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G1|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G2|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G2|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G3|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G3|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G4|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G4|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G5|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G5|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G6|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G6|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G7|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G7|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|comparator8|comparator1:G8|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN0
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN1
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN2
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN3
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN4
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN5
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN6
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|and_gate:AN7
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|exor_gate:XO
+I1 => O~0.IN0
+I2 => O~0.IN1
+O <= O~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparator8|comparator1:G8|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+

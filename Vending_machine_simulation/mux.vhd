@@ -1,0 +1,21 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity mux is
+port(
+choice,clk:in std_logic;
+S0,S1:in std_logic_vector(7 downto 0);
+S:out std_logic_vector(7 downto 0)
+);
+end mux;
+architecture bhv of  mux is
+begin
+process(clk)
+begin
+if (clk='1') then
+if (choice='0') then S<=S0;
+else S<=S1;
+end if;
+end if;
+end process;
+end bhv;

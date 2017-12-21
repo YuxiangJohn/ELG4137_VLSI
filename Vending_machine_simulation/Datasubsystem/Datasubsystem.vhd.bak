@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Datasubsystem is 
+port(  clk : in std_logic;
+       C : in std_logic;
+		 V : in std_logic_vector(7 downto 0);
+		 S0: in std_logic_vector(7 downto 0);
+		 S1: in std_logic_vector(7 downto 0);
+		 choice : in std_logic;
+		 reset : in std_logic;
+		 
+		 P : out std_logic_vector(7 downto 0));
+		 E : out std_logic_vector(7 downto 0));
+		 D : out std_logic_vector(1 downto 0));
+);
+end Datasubsystem;
+
+architecture generalized of statecontroller is
+
+component FULL_ADDER8
+port (A,B: in std_logic_vector(7 downto 0);
+       Cin : in std_logic;
+		 Cout : out std_logic;
+      Sum : out std_logic_vector(7 downto 0));
+end component;
+
+component register8
+port(I : in std_logic_vector(7 downto 0); 
+ clk : in std_logic;
+ reset : in std_logic;
+ Q : out std_logic_vector(7 downto 0);
+ Q_bar : out std_logic_vector(7 downto 0));
+ end component;
+
+ component comparator8
+port (A,B: in std_logic_vector(7 downto 0);
+		 Cout,Dout,equal : out std_logic;
+      );
+end component;
+
+component accumulator
+port (data_in: in std_logic_vector(7 downto 0);
+       clk : in std_logic;
+		 reset : in std_logic;
+      data_out : out std_logic_vector(7 downto 0));
+end component;
+
+signal reset1 :std_logic;
+signal V1,V1_bar
+begin
+
+reset1=C and not(state011);
+R1: register8 port map (V,clk,reset1,V1,V1_bar);
+A:  accumulator
+end generalized;

@@ -1,0 +1,7 @@
+
+State Machine - |VendingMachine|state
+Name state.subtract state.add state.waiting state.init 
+state.init 0 0 0 0 
+state.waiting 0 0 1 1 
+state.add 0 1 0 1 
+state.subtract 1 0 0 1 

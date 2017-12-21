@@ -1,0 +1,4115 @@
+|Datasubsystem
+clk => register_8bit:R.clk
+clk => register_8bit:R1.clk
+clk => mux:M.clk
+clk => register_8bit:R2.clk
+clk => register_8bit:R3.clk
+C => ~NO_FANOUT~
+V[0] => FULL_ADDER8:A1.A[0]
+V[1] => FULL_ADDER8:A1.A[1]
+V[2] => FULL_ADDER8:A1.A[2]
+V[3] => FULL_ADDER8:A1.A[3]
+V[4] => FULL_ADDER8:A1.A[4]
+V[5] => FULL_ADDER8:A1.A[5]
+V[6] => FULL_ADDER8:A1.A[6]
+V[7] => FULL_ADDER8:A1.A[7]
+S0[0] => mux:M.S0[0]
+S0[1] => mux:M.S0[1]
+S0[2] => mux:M.S0[2]
+S0[3] => mux:M.S0[3]
+S0[4] => mux:M.S0[4]
+S0[5] => mux:M.S0[5]
+S0[6] => mux:M.S0[6]
+S0[7] => mux:M.S0[7]
+S1[0] => mux:M.S1[0]
+S1[1] => mux:M.S1[1]
+S1[2] => mux:M.S1[2]
+S1[3] => mux:M.S1[3]
+S1[4] => mux:M.S1[4]
+S1[5] => mux:M.S1[5]
+S1[6] => mux:M.S1[6]
+S1[7] => mux:M.S1[7]
+choice => mux:M.choice
+reset => ~NO_FANOUT~
+P[0] <= register_8bit:R1.Q[0]
+P[1] <= register_8bit:R1.Q[1]
+P[2] <= register_8bit:R1.Q[2]
+P[3] <= register_8bit:R1.Q[3]
+P[4] <= register_8bit:R1.Q[4]
+P[5] <= register_8bit:R1.Q[5]
+P[6] <= register_8bit:R1.Q[6]
+P[7] <= register_8bit:R1.Q[7]
+E[0] <= register_8bit:R3.Q[0]
+E[1] <= register_8bit:R3.Q[1]
+E[2] <= register_8bit:R3.Q[2]
+E[3] <= register_8bit:R3.Q[3]
+E[4] <= register_8bit:R3.Q[4]
+E[5] <= register_8bit:R3.Q[5]
+E[6] <= register_8bit:R3.Q[6]
+E[7] <= register_8bit:R3.Q[7]
+D[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= D[1].DB_MAX_OUTPUT_PORT_TYPE
+COOOO <= comparator8:CP.Cout
+EQQQQ <= comparator8:CP.equal
+
+
+|Datasubsystem|FULL_ADDER8:A1
+A[0] => FULL_ADDER:FA0.A
+A[1] => FULL_ADDER:FA1.A
+A[2] => FULL_ADDER:FA2.A
+A[3] => FULL_ADDER:FA3.A
+A[4] => FULL_ADDER:FA4.A
+A[5] => FULL_ADDER:FA5.A
+A[6] => FULL_ADDER:FA6.A
+A[7] => FULL_ADDER:FA7.A
+B[0] => FULL_ADDER:FA0.B
+B[1] => FULL_ADDER:FA1.B
+B[2] => FULL_ADDER:FA2.B
+B[3] => FULL_ADDER:FA3.B
+B[4] => FULL_ADDER:FA4.B
+B[5] => FULL_ADDER:FA5.B
+B[6] => FULL_ADDER:FA6.B
+B[7] => FULL_ADDER:FA7.B
+Cin => FULL_ADDER:FA0.Cin
+Cout <= FULL_ADDER:FA7.Cout
+Sum[0] <= FULL_ADDER:FA0.Sum
+Sum[1] <= FULL_ADDER:FA1.Sum
+Sum[2] <= FULL_ADDER:FA2.Sum
+Sum[3] <= FULL_ADDER:FA3.Sum
+Sum[4] <= FULL_ADDER:FA4.Sum
+Sum[5] <= FULL_ADDER:FA5.Sum
+Sum[6] <= FULL_ADDER:FA6.Sum
+Sum[7] <= FULL_ADDER:FA7.Sum
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R
+I[0] => register_1bit:R0.input
+I[1] => register_1bit:R1.input
+I[2] => register_1bit:R2.input
+I[3] => register_1bit:R3.input
+I[4] => register_1bit:R4.input
+I[5] => register_1bit:R5.input
+I[6] => register_1bit:R6.input
+I[7] => register_1bit:R7.input
+clk => register_1bit:R0.clk
+clk => register_1bit:R1.clk
+clk => register_1bit:R2.clk
+clk => register_1bit:R3.clk
+clk => register_1bit:R4.clk
+clk => register_1bit:R5.clk
+clk => register_1bit:R6.clk
+clk => register_1bit:R7.clk
+reset => register_1bit:R0.rst
+reset => register_1bit:R1.rst
+reset => register_1bit:R2.rst
+reset => register_1bit:R3.rst
+reset => register_1bit:R4.rst
+reset => register_1bit:R5.rst
+reset => register_1bit:R6.rst
+reset => register_1bit:R7.rst
+Q[0] <= register_1bit:R0.Q
+Q[1] <= register_1bit:R1.Q
+Q[2] <= register_1bit:R2.Q
+Q[3] <= register_1bit:R3.Q
+Q[4] <= register_1bit:R4.Q
+Q[5] <= register_1bit:R5.Q
+Q[6] <= register_1bit:R6.Q
+Q[7] <= register_1bit:R7.Q
+Q_bar[0] <= register_1bit:R0.Q_bar
+Q_bar[1] <= register_1bit:R1.Q_bar
+Q_bar[2] <= register_1bit:R2.Q_bar
+Q_bar[3] <= register_1bit:R3.Q_bar
+Q_bar[4] <= register_1bit:R4.Q_bar
+Q_bar[5] <= register_1bit:R5.Q_bar
+Q_bar[6] <= register_1bit:R6.Q_bar
+Q_bar[7] <= register_1bit:R7.Q_bar
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R0
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R1
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R2
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R3
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R4
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R5
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R6
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R|register_1bit:R7
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1
+I[0] => register_1bit:R0.input
+I[1] => register_1bit:R1.input
+I[2] => register_1bit:R2.input
+I[3] => register_1bit:R3.input
+I[4] => register_1bit:R4.input
+I[5] => register_1bit:R5.input
+I[6] => register_1bit:R6.input
+I[7] => register_1bit:R7.input
+clk => register_1bit:R0.clk
+clk => register_1bit:R1.clk
+clk => register_1bit:R2.clk
+clk => register_1bit:R3.clk
+clk => register_1bit:R4.clk
+clk => register_1bit:R5.clk
+clk => register_1bit:R6.clk
+clk => register_1bit:R7.clk
+reset => register_1bit:R0.rst
+reset => register_1bit:R1.rst
+reset => register_1bit:R2.rst
+reset => register_1bit:R3.rst
+reset => register_1bit:R4.rst
+reset => register_1bit:R5.rst
+reset => register_1bit:R6.rst
+reset => register_1bit:R7.rst
+Q[0] <= register_1bit:R0.Q
+Q[1] <= register_1bit:R1.Q
+Q[2] <= register_1bit:R2.Q
+Q[3] <= register_1bit:R3.Q
+Q[4] <= register_1bit:R4.Q
+Q[5] <= register_1bit:R5.Q
+Q[6] <= register_1bit:R6.Q
+Q[7] <= register_1bit:R7.Q
+Q_bar[0] <= register_1bit:R0.Q_bar
+Q_bar[1] <= register_1bit:R1.Q_bar
+Q_bar[2] <= register_1bit:R2.Q_bar
+Q_bar[3] <= register_1bit:R3.Q_bar
+Q_bar[4] <= register_1bit:R4.Q_bar
+Q_bar[5] <= register_1bit:R5.Q_bar
+Q_bar[6] <= register_1bit:R6.Q_bar
+Q_bar[7] <= register_1bit:R7.Q_bar
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R0
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R1
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R2
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R3
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R4
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R5
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R6
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R1|register_1bit:R7
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP
+A[0] => comparator1:G8.A
+A[1] => comparator1:G7.A
+A[2] => comparator1:G6.A
+A[3] => comparator1:G5.A
+A[4] => comparator1:G4.A
+A[5] => comparator1:G3.A
+A[6] => comparator1:G2.A
+A[7] => comparator1:G1.A
+B[0] => comparator1:G8.B
+B[1] => comparator1:G7.B
+B[2] => comparator1:G6.B
+B[3] => comparator1:G5.B
+B[4] => comparator1:G4.B
+B[5] => comparator1:G3.B
+B[6] => comparator1:G2.B
+B[7] => comparator1:G1.B
+Cout <= comparator1:G8.Cout
+Dout <= comparator1:G8.Dout
+equal <= comparator1:G8.equal
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G1|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G2|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G3|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G4|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G5|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G6|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G7|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8
+A => not_gate:NO0.I
+A => and_gate:AN4.I1
+B => and_gate:AN0.I1
+B => not_gate:NO5.I
+Ci => not_gate:NO1.I
+Di => not_gate:NO2.I
+Cout <= not_gate:NO7.O
+Dout <= not_gate:NO4.O
+equal <= not_gate:NO8.O
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO0
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN0
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN1
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN2
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO3
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO4
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO5
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO6
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN7
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO7
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|exor_gate:XO
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|comparator8:CP|comparator1:G8|not_gate:NO8
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|mux:M
+choice => S.OUTPUTSELECT
+choice => S.OUTPUTSELECT
+choice => S.OUTPUTSELECT
+choice => S.OUTPUTSELECT
+choice => S.OUTPUTSELECT
+choice => S.OUTPUTSELECT
+choice => S.OUTPUTSELECT
+choice => S.OUTPUTSELECT
+clk => S[0]~reg0.CLK
+clk => S[1]~reg0.CLK
+clk => S[2]~reg0.CLK
+clk => S[3]~reg0.CLK
+clk => S[4]~reg0.CLK
+clk => S[5]~reg0.CLK
+clk => S[6]~reg0.CLK
+clk => S[7]~reg0.CLK
+S0[0] => S.DATAB
+S0[1] => S.DATAB
+S0[2] => S.DATAB
+S0[3] => S.DATAB
+S0[4] => S.DATAB
+S0[5] => S.DATAB
+S0[6] => S.DATAB
+S0[7] => S.DATAB
+S1[0] => S.DATAA
+S1[1] => S.DATAA
+S1[2] => S.DATAA
+S1[3] => S.DATAA
+S1[4] => S.DATAA
+S1[5] => S.DATAA
+S1[6] => S.DATAA
+S1[7] => S.DATAA
+S[0] <= S[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= S[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2
+I[0] => register_1bit:R0.input
+I[1] => register_1bit:R1.input
+I[2] => register_1bit:R2.input
+I[3] => register_1bit:R3.input
+I[4] => register_1bit:R4.input
+I[5] => register_1bit:R5.input
+I[6] => register_1bit:R6.input
+I[7] => register_1bit:R7.input
+clk => register_1bit:R0.clk
+clk => register_1bit:R1.clk
+clk => register_1bit:R2.clk
+clk => register_1bit:R3.clk
+clk => register_1bit:R4.clk
+clk => register_1bit:R5.clk
+clk => register_1bit:R6.clk
+clk => register_1bit:R7.clk
+reset => register_1bit:R0.rst
+reset => register_1bit:R1.rst
+reset => register_1bit:R2.rst
+reset => register_1bit:R3.rst
+reset => register_1bit:R4.rst
+reset => register_1bit:R5.rst
+reset => register_1bit:R6.rst
+reset => register_1bit:R7.rst
+Q[0] <= register_1bit:R0.Q
+Q[1] <= register_1bit:R1.Q
+Q[2] <= register_1bit:R2.Q
+Q[3] <= register_1bit:R3.Q
+Q[4] <= register_1bit:R4.Q
+Q[5] <= register_1bit:R5.Q
+Q[6] <= register_1bit:R6.Q
+Q[7] <= register_1bit:R7.Q
+Q_bar[0] <= register_1bit:R0.Q_bar
+Q_bar[1] <= register_1bit:R1.Q_bar
+Q_bar[2] <= register_1bit:R2.Q_bar
+Q_bar[3] <= register_1bit:R3.Q_bar
+Q_bar[4] <= register_1bit:R4.Q_bar
+Q_bar[5] <= register_1bit:R5.Q_bar
+Q_bar[6] <= register_1bit:R6.Q_bar
+Q_bar[7] <= register_1bit:R7.Q_bar
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R0
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R1
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R2
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R3
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R4
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R5
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R6
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R2|register_1bit:R7
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3
+A[0] => FULL_ADDER:FA0.A
+A[1] => FULL_ADDER:FA1.A
+A[2] => FULL_ADDER:FA2.A
+A[3] => FULL_ADDER:FA3.A
+A[4] => FULL_ADDER:FA4.A
+A[5] => FULL_ADDER:FA5.A
+A[6] => FULL_ADDER:FA6.A
+A[7] => FULL_ADDER:FA7.A
+B[0] => FULL_ADDER:FA0.B
+B[1] => FULL_ADDER:FA1.B
+B[2] => FULL_ADDER:FA2.B
+B[3] => FULL_ADDER:FA3.B
+B[4] => FULL_ADDER:FA4.B
+B[5] => FULL_ADDER:FA5.B
+B[6] => FULL_ADDER:FA6.B
+B[7] => FULL_ADDER:FA7.B
+Cin => FULL_ADDER:FA0.Cin
+Cout <= FULL_ADDER:FA7.Cout
+Sum[0] <= FULL_ADDER:FA0.Sum
+Sum[1] <= FULL_ADDER:FA1.Sum
+Sum[2] <= FULL_ADDER:FA2.Sum
+Sum[3] <= FULL_ADDER:FA3.Sum
+Sum[4] <= FULL_ADDER:FA4.Sum
+Sum[5] <= FULL_ADDER:FA5.Sum
+Sum[6] <= FULL_ADDER:FA6.Sum
+Sum[7] <= FULL_ADDER:FA7.Sum
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA0|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2
+A[0] => FULL_ADDER:FA0.A
+A[1] => FULL_ADDER:FA1.A
+A[2] => FULL_ADDER:FA2.A
+A[3] => FULL_ADDER:FA3.A
+A[4] => FULL_ADDER:FA4.A
+A[5] => FULL_ADDER:FA5.A
+A[6] => FULL_ADDER:FA6.A
+A[7] => FULL_ADDER:FA7.A
+B[0] => FULL_ADDER:FA0.B
+B[1] => FULL_ADDER:FA1.B
+B[2] => FULL_ADDER:FA2.B
+B[3] => FULL_ADDER:FA3.B
+B[4] => FULL_ADDER:FA4.B
+B[5] => FULL_ADDER:FA5.B
+B[6] => FULL_ADDER:FA6.B
+B[7] => FULL_ADDER:FA7.B
+Cin => FULL_ADDER:FA0.Cin
+Cout <= FULL_ADDER:FA7.Cout
+Sum[0] <= FULL_ADDER:FA0.Sum
+Sum[1] <= FULL_ADDER:FA1.Sum
+Sum[2] <= FULL_ADDER:FA2.Sum
+Sum[3] <= FULL_ADDER:FA3.Sum
+Sum[4] <= FULL_ADDER:FA4.Sum
+Sum[5] <= FULL_ADDER:FA5.Sum
+Sum[6] <= FULL_ADDER:FA6.Sum
+Sum[7] <= FULL_ADDER:FA7.Sum
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7
+A => half_adder_struct:HA0.A
+B => half_adder_struct:HA0.B
+Cin => half_adder_struct:HA1.A
+Sum <= half_adder_struct:HA1.Sum
+Cout <= or_gate:OG.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1
+A => not_gate:G1.I
+A => and_gate:G4.I1
+A => and_gate:G6.I1
+B => not_gate:G2.I
+B => and_gate:G3.I2
+B => and_gate:G6.I2
+Sum <= or_gate:G5.O
+Carry <= and_gate:G6.O
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|not_gate:G1
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|not_gate:G2
+I => O.DATAIN
+O <= I.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G6
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|or_gate:OG
+I1 => O.IN0
+I2 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3
+I[0] => register_1bit:R0.input
+I[1] => register_1bit:R1.input
+I[2] => register_1bit:R2.input
+I[3] => register_1bit:R3.input
+I[4] => register_1bit:R4.input
+I[5] => register_1bit:R5.input
+I[6] => register_1bit:R6.input
+I[7] => register_1bit:R7.input
+clk => register_1bit:R0.clk
+clk => register_1bit:R1.clk
+clk => register_1bit:R2.clk
+clk => register_1bit:R3.clk
+clk => register_1bit:R4.clk
+clk => register_1bit:R5.clk
+clk => register_1bit:R6.clk
+clk => register_1bit:R7.clk
+reset => register_1bit:R0.rst
+reset => register_1bit:R1.rst
+reset => register_1bit:R2.rst
+reset => register_1bit:R3.rst
+reset => register_1bit:R4.rst
+reset => register_1bit:R5.rst
+reset => register_1bit:R6.rst
+reset => register_1bit:R7.rst
+Q[0] <= register_1bit:R0.Q
+Q[1] <= register_1bit:R1.Q
+Q[2] <= register_1bit:R2.Q
+Q[3] <= register_1bit:R3.Q
+Q[4] <= register_1bit:R4.Q
+Q[5] <= register_1bit:R5.Q
+Q[6] <= register_1bit:R6.Q
+Q[7] <= register_1bit:R7.Q
+Q_bar[0] <= register_1bit:R0.Q_bar
+Q_bar[1] <= register_1bit:R1.Q_bar
+Q_bar[2] <= register_1bit:R2.Q_bar
+Q_bar[3] <= register_1bit:R3.Q_bar
+Q_bar[4] <= register_1bit:R4.Q_bar
+Q_bar[5] <= register_1bit:R5.Q_bar
+Q_bar[6] <= register_1bit:R6.Q_bar
+Q_bar[7] <= register_1bit:R7.Q_bar
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R0
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R1
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R2
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R3
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R4
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R5
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R6
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Datasubsystem|register_8bit:R3|register_1bit:R7
+input => Q.DATAA
+input => Q_bar.DATAA
+clk => Q_bar~reg0.CLK
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+rst => Q_bar.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_bar <= Q_bar~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

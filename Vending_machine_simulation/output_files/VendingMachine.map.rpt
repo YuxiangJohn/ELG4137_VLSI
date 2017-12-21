@@ -1,0 +1,602 @@
+Analysis & Synthesis report for VendingMachine
+Wed Apr 06 18:44:58 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |VendingMachine|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "register_8bit:R3"
+ 13. Port Connectivity Checks: "FULL_ADDER8:A2"
+ 14. Port Connectivity Checks: "FULL_ADDER8:A3"
+ 15. Port Connectivity Checks: "comparator8:CP|comparator1:G7"
+ 16. Port Connectivity Checks: "comparator8:CP|comparator1:G6"
+ 17. Port Connectivity Checks: "comparator8:CP|comparator1:G5"
+ 18. Port Connectivity Checks: "comparator8:CP|comparator1:G4"
+ 19. Port Connectivity Checks: "comparator8:CP|comparator1:G3"
+ 20. Port Connectivity Checks: "comparator8:CP|comparator1:G2"
+ 21. Port Connectivity Checks: "comparator8:CP|comparator1:G1"
+ 22. Port Connectivity Checks: "comparator8:CP"
+ 23. Port Connectivity Checks: "register_8bit:R1"
+ 24. Port Connectivity Checks: "register_8bit:R"
+ 25. Port Connectivity Checks: "FULL_ADDER8:A1"
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr 06 18:44:58 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; VendingMachine                                  ;
+; Top-level Entity Name              ; VendingMachine                                  ;
+; Family                             ; Cyclone III                                     ;
+; Total logic elements               ; 97                                              ;
+;     Total combinational functions  ; 96                                              ;
+;     Dedicated logic registers      ; 52                                              ;
+; Total registers                    ; 52                                              ;
+; Total pins                         ; 51                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; VendingMachine     ; VendingMachine     ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------+---------+
+; VendingMachine.vhd               ; yes             ; User VHDL File        ; Z:/yqiu059/Desktop/4137project/4137project/VendingMachine.vhd    ;         ;
+; full_adder8.vhd                  ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/full_adder8.vhd       ;         ;
+; full_adder.vhd                   ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/full_adder.vhd        ;         ;
+; half_adder_struct.vhd            ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/half_adder_struct.vhd ;         ;
+; register_8bit.vhd                ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/register_8bit.vhd     ;         ;
+; register_1bit.vhd                ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/register_1bit.vhd     ;         ;
+; comparator8.vhd                  ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/comparator8.vhd       ;         ;
+; comparator1.vhd                  ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/comparator1.vhd       ;         ;
+; mux.vhd                          ; yes             ; Auto-Found VHDL File  ; Z:/yqiu059/Desktop/4137project/4137project/mux.vhd               ;         ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 97        ;
+;                                             ;           ;
+; Total combinational functions               ; 96        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 38        ;
+;     -- 3 input functions                    ; 29        ;
+;     -- <=2 input functions                  ; 29        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 89        ;
+;     -- arithmetic mode                      ; 7         ;
+;                                             ;           ;
+; Total registers                             ; 52        ;
+;     -- Dedicated logic registers            ; 52        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 51        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 52        ;
+; Total fan-out                               ; 477       ;
+; Average fan-out                             ; 1.91      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                           ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Library Name ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
+; |VendingMachine                  ; 96 (20)           ; 52 (12)      ; 0           ; 0            ; 0       ; 0         ; 51   ; 0            ; |VendingMachine                                                                 ; work         ;
+;    |FULL_ADDER8:A1|              ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A1                                                  ; work         ;
+;       |FULL_ADDER:FA1|           ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A1|FULL_ADDER:FA1                                   ; work         ;
+;          |half_adder_struct:HA1| ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1             ; work         ;
+;             |or_gate:G5|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5  ; work         ;
+;    |FULL_ADDER8:A2|              ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2                                                  ; work         ;
+;       |FULL_ADDER:FA1|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA1                                   ; work         ;
+;          |half_adder_struct:HA1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1             ; work         ;
+;             |or_gate:G5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5  ; work         ;
+;          |or_gate:OG|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA1|or_gate:OG                        ; work         ;
+;       |FULL_ADDER:FA2|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA2                                   ; work         ;
+;          |half_adder_struct:HA0| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0             ; work         ;
+;             |or_gate:G5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5  ; work         ;
+;          |or_gate:OG|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA2|or_gate:OG                        ; work         ;
+;       |FULL_ADDER:FA3|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA3                                   ; work         ;
+;          |half_adder_struct:HA0| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0             ; work         ;
+;             |or_gate:G5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5  ; work         ;
+;          |or_gate:OG|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA3|or_gate:OG                        ; work         ;
+;       |FULL_ADDER:FA4|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA4                                   ; work         ;
+;          |half_adder_struct:HA0| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0             ; work         ;
+;             |or_gate:G5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5  ; work         ;
+;          |or_gate:OG|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA4|or_gate:OG                        ; work         ;
+;       |FULL_ADDER:FA5|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA5                                   ; work         ;
+;          |half_adder_struct:HA0| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0             ; work         ;
+;             |or_gate:G5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5  ; work         ;
+;          |or_gate:OG|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA5|or_gate:OG                        ; work         ;
+;       |FULL_ADDER:FA6|           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA6                                   ; work         ;
+;          |half_adder_struct:HA0| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0             ; work         ;
+;             |or_gate:G5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5  ; work         ;
+;    |FULL_ADDER8:A3|              ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A3                                                  ; work         ;
+;       |FULL_ADDER:FA3|           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A3|FULL_ADDER:FA3                                   ; work         ;
+;          |half_adder_struct:HA1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1             ; work         ;
+;             |and_gate:G6|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6 ; work         ;
+;       |FULL_ADDER:FA6|           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A3|FULL_ADDER:FA6                                   ; work         ;
+;          |half_adder_struct:HA1| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1             ; work         ;
+;             |and_gate:G6|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6 ; work         ;
+;    |comparator8:CP|              ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP                                                  ; work         ;
+;       |comparator1:G2|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G2                                   ; work         ;
+;          |and_gate:AN3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G2|and_gate:AN3                      ; work         ;
+;          |and_gate:AN7|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G2|and_gate:AN7                      ; work         ;
+;       |comparator1:G4|           ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G4                                   ; work         ;
+;          |and_gate:AN3|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G4|and_gate:AN3                      ; work         ;
+;          |and_gate:AN7|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G4|and_gate:AN7                      ; work         ;
+;       |comparator1:G5|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G5                                   ; work         ;
+;          |and_gate:AN3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G5|and_gate:AN3                      ; work         ;
+;          |and_gate:AN7|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G5|and_gate:AN7                      ; work         ;
+;       |comparator1:G6|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G6                                   ; work         ;
+;          |and_gate:AN3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G6|and_gate:AN3                      ; work         ;
+;          |and_gate:AN7|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G6|and_gate:AN7                      ; work         ;
+;       |comparator1:G7|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G7                                   ; work         ;
+;          |and_gate:AN3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G7|and_gate:AN3                      ; work         ;
+;          |and_gate:AN7|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G7|and_gate:AN7                      ; work         ;
+;       |comparator1:G8|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G8                                   ; work         ;
+;          |and_gate:AN7|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G8|and_gate:AN7                      ; work         ;
+;          |exor_gate:XO|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|comparator8:CP|comparator1:G8|exor_gate:XO                      ; work         ;
+;    |mux:M|                       ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|mux:M                                                           ; work         ;
+;    |register_8bit:R1|            ; 8 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1                                                ; work         ;
+;       |register_1bit:R0|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R0                               ; work         ;
+;       |register_1bit:R1|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R1                               ; work         ;
+;       |register_1bit:R2|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R2                               ; work         ;
+;       |register_1bit:R3|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R3                               ; work         ;
+;       |register_1bit:R4|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R4                               ; work         ;
+;       |register_1bit:R5|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R5                               ; work         ;
+;       |register_1bit:R6|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R6                               ; work         ;
+;       |register_1bit:R7|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R1|register_1bit:R7                               ; work         ;
+;    |register_8bit:R2|            ; 8 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2                                                ; work         ;
+;       |register_1bit:R0|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R0                               ; work         ;
+;       |register_1bit:R1|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R1                               ; work         ;
+;       |register_1bit:R2|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R2                               ; work         ;
+;       |register_1bit:R3|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R3                               ; work         ;
+;       |register_1bit:R4|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R4                               ; work         ;
+;       |register_1bit:R5|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R5                               ; work         ;
+;       |register_1bit:R6|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R6                               ; work         ;
+;       |register_1bit:R7|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R2|register_1bit:R7                               ; work         ;
+;    |register_8bit:R3|            ; 9 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3                                                ; work         ;
+;       |register_1bit:R0|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R0                               ; work         ;
+;       |register_1bit:R1|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R1                               ; work         ;
+;       |register_1bit:R2|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R2                               ; work         ;
+;       |register_1bit:R3|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R3                               ; work         ;
+;       |register_1bit:R4|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R4                               ; work         ;
+;       |register_1bit:R5|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R5                               ; work         ;
+;       |register_1bit:R6|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R6                               ; work         ;
+;       |register_1bit:R7|         ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R3|register_1bit:R7                               ; work         ;
+;    |register_8bit:R|             ; 8 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R                                                 ; work         ;
+;       |register_1bit:R0|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R0                                ; work         ;
+;       |register_1bit:R1|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R1                                ; work         ;
+;       |register_1bit:R2|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R2                                ; work         ;
+;       |register_1bit:R3|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R3                                ; work         ;
+;       |register_1bit:R4|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R4                                ; work         ;
+;       |register_1bit:R5|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R5                                ; work         ;
+;       |register_1bit:R6|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R6                                ; work         ;
+;       |register_1bit:R7|         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|register_8bit:R|register_1bit:R7                                ; work         ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------+
+; State Machine - |VendingMachine|state                                    ;
++----------------+----------------+-----------+---------------+------------+
+; Name           ; state.subtract ; state.add ; state.waiting ; state.init ;
++----------------+----------------+-----------+---------------+------------+
+; state.init     ; 0              ; 0         ; 0             ; 0          ;
+; state.waiting  ; 0              ; 0         ; 1             ; 1          ;
+; state.add      ; 0              ; 1         ; 0             ; 1          ;
+; state.subtract ; 1              ; 0         ; 0             ; 1          ;
++----------------+----------------+-----------+---------------+------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++-----------------------------------------+-------------------------------------------------+
+; Register name                           ; Reason for Removal                              ;
++-----------------------------------------+-------------------------------------------------+
+; o[2]~reg0                               ; Stuck at GND due to stuck port data_in          ;
+; register_8bit:R2|register_1bit:R7|Q_bar ; Merged with register_8bit:R2|register_1bit:R7|Q ;
+; register_8bit:R2|register_1bit:R6|Q_bar ; Merged with register_8bit:R2|register_1bit:R6|Q ;
+; register_8bit:R2|register_1bit:R5|Q_bar ; Merged with register_8bit:R2|register_1bit:R5|Q ;
+; register_8bit:R2|register_1bit:R4|Q_bar ; Merged with register_8bit:R2|register_1bit:R4|Q ;
+; register_8bit:R2|register_1bit:R3|Q_bar ; Merged with register_8bit:R2|register_1bit:R3|Q ;
+; register_8bit:R2|register_1bit:R2|Q_bar ; Merged with register_8bit:R2|register_1bit:R2|Q ;
+; register_8bit:R2|register_1bit:R1|Q_bar ; Merged with register_8bit:R2|register_1bit:R1|Q ;
+; register_8bit:R2|register_1bit:R0|Q_bar ; Merged with register_8bit:R2|register_1bit:R0|Q ;
+; Total Number of Removed Registers = 9   ;                                                 ;
++-----------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 52    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |VendingMachine|M_c        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |VendingMachine|o          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |VendingMachine|D          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_8bit:R3"                                                                    ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; q_bar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FULL_ADDER8:A2"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FULL_ADDER8:A3"                                                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[7..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cin     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP|comparator1:G7"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; equal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP|comparator1:G6"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; equal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP|comparator1:G5"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; equal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP|comparator1:G4"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; equal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP|comparator1:G3"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; equal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP|comparator1:G2"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; equal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP|comparator1:G1"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; ci    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; di    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; equal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator8:CP"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_8bit:R1"                                                                    ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; q_bar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_8bit:R"                                                                     ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; q_bar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FULL_ADDER8:A1"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Apr 06 18:44:50 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingMachine -c VendingMachine
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file vendingmachine.vhd
+    Info (12022): Found design unit 1: VendingMachine-generalized
+    Info (12023): Found entity 1: VendingMachine
+Info (12127): Elaborating entity "VendingMachine" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(69): object "Cout" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(69): object "Cout1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(69): object "DO" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(69): object "AO" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(70): object "Q_bar" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(70): object "QR_bar" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(70): object "Q3_bar" assigned a value but never read
+Warning (12125): Using design file full_adder8.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FULL_ADDER8-structure_view
+    Info (12023): Found entity 1: FULL_ADDER8
+Info (12128): Elaborating entity "FULL_ADDER8" for hierarchy "FULL_ADDER8:A1"
+Warning (12125): Using design file full_adder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FULL_ADDER-structure_view
+    Info (12023): Found entity 1: FULL_ADDER
+Info (12128): Elaborating entity "FULL_ADDER" for hierarchy "FULL_ADDER8:A1|FULL_ADDER:FA0"
+Warning (12125): Using design file half_adder_struct.vhd, which is not specified as a design file for the current project, but contains definitions for 10 design units and 5 entities in project
+    Info (12022): Found design unit 1: not_gate-behavioral
+    Info (12022): Found design unit 2: and_gate-behavioral
+    Info (12022): Found design unit 3: or_gate-behavioral
+    Info (12022): Found design unit 4: exor_gate-behavioral
+    Info (12022): Found design unit 5: half_adder_struct-structure_view
+    Info (12023): Found entity 1: half_adder_struct
+    Info (12023): Found entity 2: not_gate
+    Info (12023): Found entity 3: and_gate
+    Info (12023): Found entity 4: or_gate
+    Info (12023): Found entity 5: exor_gate
+Info (12128): Elaborating entity "half_adder_struct" for hierarchy "FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0"
+Info (12128): Elaborating entity "not_gate" for hierarchy "FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|not_gate:G1"
+Info (12128): Elaborating entity "and_gate" for hierarchy "FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3"
+Info (12128): Elaborating entity "or_gate" for hierarchy "FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5"
+Warning (12125): Using design file register_8bit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: register_8bit-structure_view
+    Info (12023): Found entity 1: register_8bit
+Info (12128): Elaborating entity "register_8bit" for hierarchy "register_8bit:R"
+Warning (12125): Using design file register_1bit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: register_1bit-bhv
+    Info (12023): Found entity 1: register_1bit
+Info (12128): Elaborating entity "register_1bit" for hierarchy "register_8bit:R|register_1bit:R0"
+Warning (12125): Using design file comparator8.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: comparator8-behavioral
+    Info (12023): Found entity 1: comparator8
+Info (12128): Elaborating entity "comparator8" for hierarchy "comparator8:CP"
+Warning (12125): Using design file comparator1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: comparator1-behavioral
+    Info (12023): Found entity 1: comparator1
+Info (12128): Elaborating entity "comparator1" for hierarchy "comparator8:CP|comparator1:G1"
+Info (12128): Elaborating entity "exor_gate" for hierarchy "comparator8:CP|comparator1:G1|exor_gate:XO"
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus II megafunction library
+Warning (12125): Using design file mux.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: mux-bhv
+    Info (12023): Found entity 1: mux
+Info (12128): Elaborating entity "mux" for hierarchy "mux:M"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "o[2]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 28 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 97 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 527 megabytes
+    Info: Processing ended: Wed Apr 06 18:44:58 2016
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
+
+

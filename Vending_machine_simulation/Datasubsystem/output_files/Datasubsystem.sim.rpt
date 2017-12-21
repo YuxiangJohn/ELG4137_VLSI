@@ -1,0 +1,649 @@
+Simulator report for Datasubsystem
+Sat Apr 02 20:13:38 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 301 nodes    ;
+; Simulation Coverage         ;      23.75 % ;
+; Total Number of Transitions ; 384          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                  ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                             ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                   ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                    ;               ;
+; Vector input source                                                                        ; Z:/yqiu059/Desktop/4137project/4137project/Datasubsystem/Waveform4.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                     ; On            ;
+; Check outputs                                                                              ; Off                                                                    ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                     ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                     ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                     ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                     ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                    ; Off           ;
+; Detect glitches                                                                            ; Off                                                                    ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                    ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                    ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                    ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                    ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                     ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                             ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                    ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                    ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                   ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                                              ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                                              ; Transport     ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      23.75 % ;
+; Total nodes checked                                 ; 301          ;
+; Total output ports checked                          ; 299          ;
+; Total output ports with complete 1/0-value coverage ; 71           ;
+; Total output ports with no 1/0-value coverage       ; 180          ;
+; Total output ports with no 1-value coverage         ; 186          ;
+; Total output ports with no 0-value coverage         ; 222          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                            ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; Node Name                                                                        ; Output Port Name                                                                 ; Output Port Type ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; |Datasubsystem|clk                                                               ; |Datasubsystem|clk                                                               ; out              ;
+; |Datasubsystem|V[0]                                                              ; |Datasubsystem|V[0]                                                              ; out              ;
+; |Datasubsystem|choice                                                            ; |Datasubsystem|choice                                                            ; out              ;
+; |Datasubsystem|E[0]                                                              ; |Datasubsystem|E[0]                                                              ; pin_out          ;
+; |Datasubsystem|E[1]                                                              ; |Datasubsystem|E[1]                                                              ; pin_out          ;
+; |Datasubsystem|E[2]                                                              ; |Datasubsystem|E[2]                                                              ; pin_out          ;
+; |Datasubsystem|E[3]                                                              ; |Datasubsystem|E[3]                                                              ; pin_out          ;
+; |Datasubsystem|E[4]                                                              ; |Datasubsystem|E[4]                                                              ; pin_out          ;
+; |Datasubsystem|E[5]                                                              ; |Datasubsystem|E[5]                                                              ; pin_out          ;
+; |Datasubsystem|E[6]                                                              ; |Datasubsystem|E[6]                                                              ; pin_out          ;
+; |Datasubsystem|E[7]                                                              ; |Datasubsystem|E[7]                                                              ; pin_out          ;
+; |Datasubsystem|DO                                                                ; |Datasubsystem|DO                                                                ; pin_out          ;
+; |Datasubsystem|EQ                                                                ; |Datasubsystem|EQ                                                                ; pin_out          ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R7|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R7|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R6|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R6|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R5|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R5|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R4|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R4|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R3|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R3|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R2|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R2|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R1|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R1|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R3|register_1bit:R0|Q                               ; |Datasubsystem|register_8bit:R3|register_1bit:R0|Q                               ; regout           ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|exor_gate:XO|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|exor_gate:XO|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R1|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R1|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R0|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R0|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R1|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R1|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R0|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R0|Q                                ; regout           ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                               ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; Node Name                                                                        ; Output Port Name                                                                 ; Output Port Type ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; |Datasubsystem|V[1]                                                              ; |Datasubsystem|V[1]                                                              ; out              ;
+; |Datasubsystem|V[2]                                                              ; |Datasubsystem|V[2]                                                              ; out              ;
+; |Datasubsystem|V[3]                                                              ; |Datasubsystem|V[3]                                                              ; out              ;
+; |Datasubsystem|V[4]                                                              ; |Datasubsystem|V[4]                                                              ; out              ;
+; |Datasubsystem|V[5]                                                              ; |Datasubsystem|V[5]                                                              ; out              ;
+; |Datasubsystem|V[6]                                                              ; |Datasubsystem|V[6]                                                              ; out              ;
+; |Datasubsystem|V[7]                                                              ; |Datasubsystem|V[7]                                                              ; out              ;
+; |Datasubsystem|S0[0]                                                             ; |Datasubsystem|S0[0]                                                             ; out              ;
+; |Datasubsystem|S0[1]                                                             ; |Datasubsystem|S0[1]                                                             ; out              ;
+; |Datasubsystem|S0[2]                                                             ; |Datasubsystem|S0[2]                                                             ; out              ;
+; |Datasubsystem|S0[3]                                                             ; |Datasubsystem|S0[3]                                                             ; out              ;
+; |Datasubsystem|S0[4]                                                             ; |Datasubsystem|S0[4]                                                             ; out              ;
+; |Datasubsystem|S0[5]                                                             ; |Datasubsystem|S0[5]                                                             ; out              ;
+; |Datasubsystem|S0[6]                                                             ; |Datasubsystem|S0[6]                                                             ; out              ;
+; |Datasubsystem|S0[7]                                                             ; |Datasubsystem|S0[7]                                                             ; out              ;
+; |Datasubsystem|S1[0]                                                             ; |Datasubsystem|S1[0]                                                             ; out              ;
+; |Datasubsystem|S1[1]                                                             ; |Datasubsystem|S1[1]                                                             ; out              ;
+; |Datasubsystem|S1[2]                                                             ; |Datasubsystem|S1[2]                                                             ; out              ;
+; |Datasubsystem|S1[3]                                                             ; |Datasubsystem|S1[3]                                                             ; out              ;
+; |Datasubsystem|S1[4]                                                             ; |Datasubsystem|S1[4]                                                             ; out              ;
+; |Datasubsystem|S1[5]                                                             ; |Datasubsystem|S1[5]                                                             ; out              ;
+; |Datasubsystem|S1[6]                                                             ; |Datasubsystem|S1[6]                                                             ; out              ;
+; |Datasubsystem|S1[7]                                                             ; |Datasubsystem|S1[7]                                                             ; out              ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R7|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R7|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R6|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R6|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R5|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R5|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R4|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R4|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R3|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R3|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R1|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R1|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R0|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R0|Q                               ; regout           ;
+; |Datasubsystem|mux:M|S[0]                                                        ; |Datasubsystem|mux:M|S[0]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S~0                                                         ; |Datasubsystem|mux:M|S~0                                                         ; out              ;
+; |Datasubsystem|mux:M|S~1                                                         ; |Datasubsystem|mux:M|S~1                                                         ; out              ;
+; |Datasubsystem|mux:M|S~2                                                         ; |Datasubsystem|mux:M|S~2                                                         ; out              ;
+; |Datasubsystem|mux:M|S~3                                                         ; |Datasubsystem|mux:M|S~3                                                         ; out              ;
+; |Datasubsystem|mux:M|S~4                                                         ; |Datasubsystem|mux:M|S~4                                                         ; out              ;
+; |Datasubsystem|mux:M|S~5                                                         ; |Datasubsystem|mux:M|S~5                                                         ; out              ;
+; |Datasubsystem|mux:M|S~6                                                         ; |Datasubsystem|mux:M|S~6                                                         ; out              ;
+; |Datasubsystem|mux:M|S~7                                                         ; |Datasubsystem|mux:M|S~7                                                         ; out              ;
+; |Datasubsystem|mux:M|S[1]                                                        ; |Datasubsystem|mux:M|S[1]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[3]                                                        ; |Datasubsystem|mux:M|S[3]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[4]                                                        ; |Datasubsystem|mux:M|S[4]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[5]                                                        ; |Datasubsystem|mux:M|S[5]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[6]                                                        ; |Datasubsystem|mux:M|S[6]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[7]                                                        ; |Datasubsystem|mux:M|S[7]                                                        ; regout           ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R7|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R7|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R6|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R6|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R5|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R5|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R4|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R4|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R3|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R3|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R7|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R7|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R6|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R6|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R5|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R5|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R4|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R4|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R3|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R3|Q                                ; regout           ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                               ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; Node Name                                                                        ; Output Port Name                                                                 ; Output Port Type ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; |Datasubsystem|V[1]                                                              ; |Datasubsystem|V[1]                                                              ; out              ;
+; |Datasubsystem|V[2]                                                              ; |Datasubsystem|V[2]                                                              ; out              ;
+; |Datasubsystem|V[3]                                                              ; |Datasubsystem|V[3]                                                              ; out              ;
+; |Datasubsystem|V[4]                                                              ; |Datasubsystem|V[4]                                                              ; out              ;
+; |Datasubsystem|V[5]                                                              ; |Datasubsystem|V[5]                                                              ; out              ;
+; |Datasubsystem|V[6]                                                              ; |Datasubsystem|V[6]                                                              ; out              ;
+; |Datasubsystem|V[7]                                                              ; |Datasubsystem|V[7]                                                              ; out              ;
+; |Datasubsystem|S0[0]                                                             ; |Datasubsystem|S0[0]                                                             ; out              ;
+; |Datasubsystem|S0[1]                                                             ; |Datasubsystem|S0[1]                                                             ; out              ;
+; |Datasubsystem|S0[2]                                                             ; |Datasubsystem|S0[2]                                                             ; out              ;
+; |Datasubsystem|S0[3]                                                             ; |Datasubsystem|S0[3]                                                             ; out              ;
+; |Datasubsystem|S0[4]                                                             ; |Datasubsystem|S0[4]                                                             ; out              ;
+; |Datasubsystem|S0[5]                                                             ; |Datasubsystem|S0[5]                                                             ; out              ;
+; |Datasubsystem|S0[6]                                                             ; |Datasubsystem|S0[6]                                                             ; out              ;
+; |Datasubsystem|S0[7]                                                             ; |Datasubsystem|S0[7]                                                             ; out              ;
+; |Datasubsystem|S1[0]                                                             ; |Datasubsystem|S1[0]                                                             ; out              ;
+; |Datasubsystem|S1[1]                                                             ; |Datasubsystem|S1[1]                                                             ; out              ;
+; |Datasubsystem|S1[2]                                                             ; |Datasubsystem|S1[2]                                                             ; out              ;
+; |Datasubsystem|S1[3]                                                             ; |Datasubsystem|S1[3]                                                             ; out              ;
+; |Datasubsystem|S1[4]                                                             ; |Datasubsystem|S1[4]                                                             ; out              ;
+; |Datasubsystem|S1[5]                                                             ; |Datasubsystem|S1[5]                                                             ; out              ;
+; |Datasubsystem|S1[6]                                                             ; |Datasubsystem|S1[6]                                                             ; out              ;
+; |Datasubsystem|S1[7]                                                             ; |Datasubsystem|S1[7]                                                             ; out              ;
+; |Datasubsystem|CO                                                                ; |Datasubsystem|CO                                                                ; pin_out          ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A2|FULL_ADDER:FA0|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A3|FULL_ADDER:FA1|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R7|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R7|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R6|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R6|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R5|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R5|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R4|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R4|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R3|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R3|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R2|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R2|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R1|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R1|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R2|register_1bit:R0|Q                               ; |Datasubsystem|register_8bit:R2|register_1bit:R0|Q                               ; regout           ;
+; |Datasubsystem|mux:M|S[0]                                                        ; |Datasubsystem|mux:M|S[0]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S~0                                                         ; |Datasubsystem|mux:M|S~0                                                         ; out              ;
+; |Datasubsystem|mux:M|S~1                                                         ; |Datasubsystem|mux:M|S~1                                                         ; out              ;
+; |Datasubsystem|mux:M|S~2                                                         ; |Datasubsystem|mux:M|S~2                                                         ; out              ;
+; |Datasubsystem|mux:M|S~3                                                         ; |Datasubsystem|mux:M|S~3                                                         ; out              ;
+; |Datasubsystem|mux:M|S~4                                                         ; |Datasubsystem|mux:M|S~4                                                         ; out              ;
+; |Datasubsystem|mux:M|S~5                                                         ; |Datasubsystem|mux:M|S~5                                                         ; out              ;
+; |Datasubsystem|mux:M|S~6                                                         ; |Datasubsystem|mux:M|S~6                                                         ; out              ;
+; |Datasubsystem|mux:M|S~7                                                         ; |Datasubsystem|mux:M|S~7                                                         ; out              ;
+; |Datasubsystem|mux:M|S[1]                                                        ; |Datasubsystem|mux:M|S[1]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[2]                                                        ; |Datasubsystem|mux:M|S[2]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[3]                                                        ; |Datasubsystem|mux:M|S[3]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[4]                                                        ; |Datasubsystem|mux:M|S[4]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[5]                                                        ; |Datasubsystem|mux:M|S[5]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[6]                                                        ; |Datasubsystem|mux:M|S[6]                                                        ; regout           ;
+; |Datasubsystem|mux:M|S[7]                                                        ; |Datasubsystem|mux:M|S[7]                                                        ; regout           ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G8|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G7|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G6|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G5|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G4|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G3|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN7|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN7|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN6|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN6|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN5|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN5|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN3|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN3|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN2|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN2|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN1|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN1|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G2|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN4|O                      ; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN4|O                      ; out0             ;
+; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN0|O                      ; |Datasubsystem|comparator8:CP|comparator1:G1|and_gate:AN0|O                      ; out0             ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R7|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R7|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R6|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R6|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R5|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R5|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R4|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R4|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R3|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R3|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R1|register_1bit:R2|Q                               ; |Datasubsystem|register_8bit:R1|register_1bit:R2|Q                               ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R7|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R7|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R6|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R6|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R5|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R5|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R4|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R4|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R3|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R3|Q                                ; regout           ;
+; |Datasubsystem|register_8bit:R|register_1bit:R2|Q                                ; |Datasubsystem|register_8bit:R|register_1bit:R2|Q                                ; regout           ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA7|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA6|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA5|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA4|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|or_gate:OG|O                        ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|or_gate:OG|O                        ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA3|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA1|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5|O  ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|or_gate:G5|O  ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA2|half_adder_struct:HA0|and_gate:G3|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G6|O ; out0             ;
+; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; |Datasubsystem|FULL_ADDER8:A1|FULL_ADDER:FA1|half_adder_struct:HA0|and_gate:G4|O ; out0             ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Apr 02 20:13:37 2016
+Info: Command: quartus_sim --simulation_results_format=VWF Datasubsystem -c Datasubsystem
+Info (324025): Using vector source file "Z:/yqiu059/Desktop/4137project/4137project/Datasubsystem/Waveform4.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 190.0 ns on register "|Datasubsystem|register_8bit:R1|register_1bit:R0|Q"
+Warning (324036): Found clock-sensitive change during active clock edge at time 190.0 ns on register "|Datasubsystem|register_8bit:R|register_1bit:R0|Q"
+Warning (324036): Found clock-sensitive change during active clock edge at time 230.0 ns on register "|Datasubsystem|register_8bit:R1|register_1bit:R1|Q"
+Warning (324036): Found clock-sensitive change during active clock edge at time 230.0 ns on register "|Datasubsystem|register_8bit:R|register_1bit:R1|Q"
+Warning (324036): Found clock-sensitive change during active clock edge at time 310.0 ns on register "|Datasubsystem|register_8bit:R1|register_1bit:R2|Q"
+Warning (324036): Found clock-sensitive change during active clock edge at time 310.0 ns on register "|Datasubsystem|register_8bit:R|register_1bit:R2|Q"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      23.75 %
+Info (328052): Number of transitions in simulation is 384
+Info (324045): Vector file Datasubsystem.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 323 megabytes
+    Info: Processing ended: Sat Apr 02 20:13:38 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

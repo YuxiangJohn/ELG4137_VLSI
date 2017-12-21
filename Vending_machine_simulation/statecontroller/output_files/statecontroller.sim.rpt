@@ -1,0 +1,276 @@
+Simulator report for statecontroller
+Sat Apr 02 21:22:32 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 96 nodes     ;
+; Simulation Coverage         ;      64.77 % ;
+; Total Number of Transitions ; 508          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                    ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                  ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                               ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                     ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                      ;               ;
+; Vector input source                                                                        ; Z:/yqiu059/Desktop/4137project/4137project/statecontroller/Waveform6.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                       ; On            ;
+; Check outputs                                                                              ; Off                                                                      ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                       ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                       ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                       ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                       ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                      ; Off           ;
+; Detect glitches                                                                            ; Off                                                                      ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                      ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                      ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                      ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                      ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                       ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                               ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                      ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                      ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                     ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                                                ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                                                ; Transport     ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      64.77 % ;
+; Total nodes checked                                 ; 96           ;
+; Total output ports checked                          ; 88           ;
+; Total output ports with complete 1/0-value coverage ; 57           ;
+; Total output ports with no 1/0-value coverage       ; 21           ;
+; Total output ports with no 1-value coverage         ; 29           ;
+; Total output ports with no 0-value coverage         ; 23           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                        ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |statecontroller|o~0           ; |statecontroller|o~0           ; out              ;
+; |statecontroller|o~1           ; |statecontroller|o~1           ; out              ;
+; |statecontroller|adder_c~0     ; |statecontroller|adder_c~0     ; out              ;
+; |statecontroller|process_0~0   ; |statecontroller|process_0~0   ; out0             ;
+; |statecontroller|state~1       ; |statecontroller|state~1       ; out              ;
+; |statecontroller|state~2       ; |statecontroller|state~2       ; out              ;
+; |statecontroller|o~3           ; |statecontroller|o~3           ; out              ;
+; |statecontroller|o~4           ; |statecontroller|o~4           ; out              ;
+; |statecontroller|adder_c~1     ; |statecontroller|adder_c~1     ; out              ;
+; |statecontroller|state~5       ; |statecontroller|state~5       ; out              ;
+; |statecontroller|state~6       ; |statecontroller|state~6       ; out              ;
+; |statecontroller|state~7       ; |statecontroller|state~7       ; out              ;
+; |statecontroller|o~6           ; |statecontroller|o~6           ; out              ;
+; |statecontroller|o~7           ; |statecontroller|o~7           ; out              ;
+; |statecontroller|sub_c~1       ; |statecontroller|sub_c~1       ; out              ;
+; |statecontroller|adder_c~2     ; |statecontroller|adder_c~2     ; out              ;
+; |statecontroller|state~9       ; |statecontroller|state~9       ; out              ;
+; |statecontroller|state~10      ; |statecontroller|state~10      ; out              ;
+; |statecontroller|state~11      ; |statecontroller|state~11      ; out              ;
+; |statecontroller|o~9           ; |statecontroller|o~9           ; out              ;
+; |statecontroller|o~10          ; |statecontroller|o~10          ; out              ;
+; |statecontroller|sub_c~2       ; |statecontroller|sub_c~2       ; out              ;
+; |statecontroller|adder_c~3     ; |statecontroller|adder_c~3     ; out              ;
+; |statecontroller|adder_c~reg0  ; |statecontroller|adder_c~reg0  ; regout           ;
+; |statecontroller|M_c~reg0      ; |statecontroller|M_c~reg0      ; regout           ;
+; |statecontroller|o[0]~reg0     ; |statecontroller|o[0]~reg0     ; regout           ;
+; |statecontroller|o[1]~reg0     ; |statecontroller|o[1]~reg0     ; regout           ;
+; |statecontroller|state.add     ; |statecontroller|state.add     ; regout           ;
+; |statecontroller|state.waiting ; |statecontroller|state.waiting ; regout           ;
+; |statecontroller|clk           ; |statecontroller|clk           ; out              ;
+; |statecontroller|C             ; |statecontroller|C             ; out              ;
+; |statecontroller|EQ            ; |statecontroller|EQ            ; out              ;
+; |statecontroller|M_c           ; |statecontroller|M_c           ; pin_out          ;
+; |statecontroller|adder_c       ; |statecontroller|adder_c       ; pin_out          ;
+; |statecontroller|o[0]          ; |statecontroller|o[0]          ; pin_out          ;
+; |statecontroller|o[1]          ; |statecontroller|o[1]          ; pin_out          ;
+; |statecontroller|state~14      ; |statecontroller|state~14      ; out0             ;
+; |statecontroller|state~18      ; |statecontroller|state~18      ; out0             ;
+; |statecontroller|state~20      ; |statecontroller|state~20      ; out0             ;
+; |statecontroller|state~26      ; |statecontroller|state~26      ; out0             ;
+; |statecontroller|Selector0~0   ; |statecontroller|Selector0~0   ; out0             ;
+; |statecontroller|Selector0~2   ; |statecontroller|Selector0~2   ; out0             ;
+; |statecontroller|Selector0~3   ; |statecontroller|Selector0~3   ; out0             ;
+; |statecontroller|Selector0~4   ; |statecontroller|Selector0~4   ; out0             ;
+; |statecontroller|Selector1~0   ; |statecontroller|Selector1~0   ; out0             ;
+; |statecontroller|Selector1~1   ; |statecontroller|Selector1~1   ; out0             ;
+; |statecontroller|Selector1~2   ; |statecontroller|Selector1~2   ; out0             ;
+; |statecontroller|Selector2~0   ; |statecontroller|Selector2~0   ; out0             ;
+; |statecontroller|Selector2~1   ; |statecontroller|Selector2~1   ; out0             ;
+; |statecontroller|Selector2~2   ; |statecontroller|Selector2~2   ; out0             ;
+; |statecontroller|Selector3~0   ; |statecontroller|Selector3~0   ; out0             ;
+; |statecontroller|Selector3~2   ; |statecontroller|Selector3~2   ; out0             ;
+; |statecontroller|Selector3~3   ; |statecontroller|Selector3~3   ; out0             ;
+; |statecontroller|Selector3~4   ; |statecontroller|Selector3~4   ; out0             ;
+; |statecontroller|Selector4~0   ; |statecontroller|Selector4~0   ; out0             ;
+; |statecontroller|Selector4~2   ; |statecontroller|Selector4~2   ; out0             ;
+; |statecontroller|Selector4~3   ; |statecontroller|Selector4~3   ; out0             ;
++--------------------------------+--------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                   ;
++------------------------------------+------------------------------------+------------------+
+; Node Name                          ; Output Port Name                   ; Output Port Type ;
++------------------------------------+------------------------------------+------------------+
+; |statecontroller|state~0           ; |statecontroller|state~0           ; out              ;
+; |statecontroller|state~3           ; |statecontroller|state~3           ; out              ;
+; |statecontroller|o~2               ; |statecontroller|o~2               ; out              ;
+; |statecontroller|M_c~0             ; |statecontroller|M_c~0             ; out              ;
+; |statecontroller|sub_c~0           ; |statecontroller|sub_c~0           ; out              ;
+; |statecontroller|state~4           ; |statecontroller|state~4           ; out              ;
+; |statecontroller|o~5               ; |statecontroller|o~5               ; out              ;
+; |statecontroller|M_c~1             ; |statecontroller|M_c~1             ; out              ;
+; |statecontroller|state~8           ; |statecontroller|state~8           ; out              ;
+; |statecontroller|o~8               ; |statecontroller|o~8               ; out              ;
+; |statecontroller|M_c~2             ; |statecontroller|M_c~2             ; out              ;
+; |statecontroller|state~12          ; |statecontroller|state~12          ; out              ;
+; |statecontroller|state~13          ; |statecontroller|state~13          ; out              ;
+; |statecontroller|o~11              ; |statecontroller|o~11              ; out              ;
+; |statecontroller|M_c~3             ; |statecontroller|M_c~3             ; out              ;
+; |statecontroller|sub_c~3           ; |statecontroller|sub_c~3           ; out              ;
+; |statecontroller|o[2]~reg0         ; |statecontroller|o[2]~reg0         ; regout           ;
+; |statecontroller|state.substrate   ; |statecontroller|state.substrate   ; regout           ;
+; |statecontroller|state.init        ; |statecontroller|state.init        ; regout           ;
+; |statecontroller|reset             ; |statecontroller|reset             ; out              ;
+; |statecontroller|CO                ; |statecontroller|CO                ; out              ;
+; |statecontroller|o[2]              ; |statecontroller|o[2]              ; pin_out          ;
+; |statecontroller|state.init~0      ; |statecontroller|state.init~0      ; out0             ;
+; |statecontroller|state~16          ; |statecontroller|state~16          ; out0             ;
+; |statecontroller|state.substrate~0 ; |statecontroller|state.substrate~0 ; out0             ;
+; |statecontroller|state~22          ; |statecontroller|state~22          ; out0             ;
+; |statecontroller|Selector0~1       ; |statecontroller|Selector0~1       ; out0             ;
+; |statecontroller|Selector3~1       ; |statecontroller|Selector3~1       ; out0             ;
+; |statecontroller|Selector4~1       ; |statecontroller|Selector4~1       ; out0             ;
++------------------------------------+------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                   ;
++------------------------------------+------------------------------------+------------------+
+; Node Name                          ; Output Port Name                   ; Output Port Type ;
++------------------------------------+------------------------------------+------------------+
+; |statecontroller|sub_c~reg0        ; |statecontroller|sub_c~reg0        ; regout           ;
+; |statecontroller|state~0           ; |statecontroller|state~0           ; out              ;
+; |statecontroller|state~3           ; |statecontroller|state~3           ; out              ;
+; |statecontroller|o~2               ; |statecontroller|o~2               ; out              ;
+; |statecontroller|M_c~0             ; |statecontroller|M_c~0             ; out              ;
+; |statecontroller|sub_c~0           ; |statecontroller|sub_c~0           ; out              ;
+; |statecontroller|state~4           ; |statecontroller|state~4           ; out              ;
+; |statecontroller|o~5               ; |statecontroller|o~5               ; out              ;
+; |statecontroller|M_c~1             ; |statecontroller|M_c~1             ; out              ;
+; |statecontroller|o~8               ; |statecontroller|o~8               ; out              ;
+; |statecontroller|state~13          ; |statecontroller|state~13          ; out              ;
+; |statecontroller|o~11              ; |statecontroller|o~11              ; out              ;
+; |statecontroller|sub_c~3           ; |statecontroller|sub_c~3           ; out              ;
+; |statecontroller|o[2]~reg0         ; |statecontroller|o[2]~reg0         ; regout           ;
+; |statecontroller|state.substrate   ; |statecontroller|state.substrate   ; regout           ;
+; |statecontroller|CO                ; |statecontroller|CO                ; out              ;
+; |statecontroller|sub_c             ; |statecontroller|sub_c             ; pin_out          ;
+; |statecontroller|o[2]              ; |statecontroller|o[2]              ; pin_out          ;
+; |statecontroller|state.substrate~0 ; |statecontroller|state.substrate~0 ; out0             ;
+; |statecontroller|state~22          ; |statecontroller|state~22          ; out0             ;
+; |statecontroller|Selector0~1       ; |statecontroller|Selector0~1       ; out0             ;
+; |statecontroller|Selector3~1       ; |statecontroller|Selector3~1       ; out0             ;
+; |statecontroller|Selector4~1       ; |statecontroller|Selector4~1       ; out0             ;
++------------------------------------+------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Apr 02 21:22:31 2016
+Info: Command: quartus_sim --simulation_results_format=VWF statecontroller -c statecontroller
+Info (324025): Using vector source file "Z:/yqiu059/Desktop/4137project/4137project/statecontroller/Waveform6.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 260.0 ns on register "|statecontroller|adder_c~reg0"
+Warning (324036): Found clock-sensitive change during active clock edge at time 260.0 ns on register "|statecontroller|o[0]~reg0"
+Warning (324036): Found clock-sensitive change during active clock edge at time 260.0 ns on register "|statecontroller|o[1]~reg0"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      64.77 %
+Info (328052): Number of transitions in simulation is 508
+Info (324045): Vector file statecontroller.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 323 megabytes
+    Info: Processing ended: Sat Apr 02 21:22:32 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
